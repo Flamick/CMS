@@ -277,7 +277,7 @@ body {
       flex-basis: 1/3; }
 
 #home-hero {
-  background: url("../img/hero_home.jpg") no-repeat center center/cover;
+  background: url("../img/home-hero.jpg") no-repeat center center/cover;
   position: relative;
   color: #f4f4f4;
   min-height: 66vh;
@@ -290,20 +290,36 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    background-color: rgba(51, 51, 51, 0.8);
+    background-color: rgba(51, 51, 51, 0.5);
     height: 100%;
     width: 100%;
     z-index: 0; }
-  #home-hero .hero-content .flex-container {
-    gap: 1rem; }
+  #home-hero .hero-content {
+    position: absolute;
+    top: 3rem; }
+    #home-hero .hero-content .flex-container {
+      gap: .7rem; }
+    #home-hero .hero-content .hero-text {
+      padding-bottom: 2rem; }
   #home-hero .hero-buttons {
     flex-direction: row;
-    gap: 3rem;
-    position: absolute;
-    top: 200%; }
+    gap: 3rem; }
     #home-hero .hero-buttons .btn-light {
-      width: 33%; }
+      width: 50%;
+      border-radius: 5px;
+      padding: .7rem 1rem;
+      font-size: .9rem; }
 
 #home-hero > * {
   z-index: 2;
   position: relative; }
+
+.survey {
+  background: #333;
+  color: #f4f4f4; }
+  .survey-content {
+    padding: .7rem 1rem;
+    text-align: center; }
+    .survey-content p {
+      font-size: .9rem;
+      line-height: 1.2; }
