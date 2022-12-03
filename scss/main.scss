@@ -74,7 +74,6 @@ body {
 #home {
     &-hero {
         background: url("../img/home-hero.jpg") no-repeat center center/cover;
-        height: 100%;
         position: relative;
         color: $light-color;
         min-height: 66vh;
@@ -97,7 +96,7 @@ body {
 
         .hero-content {
             position: absolute;
-            top: 3rem;
+            top: 2rem;
 
             .flex-container {
                 gap: .7rem;
