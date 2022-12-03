@@ -1,0 +1,113 @@
+@import "config";
+@import "utilities";
+@import "hamburger.scss";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:visited {
+        text-decoration: none;
+    }
+}
+
+body {
+    font-family: $primary-font;
+    color: $dark-color;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+// navbar category start
+.navbar-category {
+    color: $dark-color;
+    background: $primary-color;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        li {
+            padding: .7rem;
+            font-weight: 500;
+            flex-basis: 1/3;
+            border: 1px solid $dark-color;
+            
+            &:first-child  {
+                border-left: 2px solid $dark-color;
+            }
+            &:last-child {
+                border-right: 2px solid $dark-color;
+            }
+
+            &:nth-child(2) {
+                background: $light-complimentary;
+            } 
+        }
+    }
+}
+// navbar category end
+
+// home-hero start
+#home {
+    &-hero {
+        background: url("../img/hero_home.jpg") no-repeat center center/cover;
+        position: relative;
+        color: $light-color;
+        min-height: 76vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgba($color: #333, $alpha: 0.80);
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .hero-buttons {
+            flex-direction: row;
+            gap: 3rem;
+            position: absolute;
+            top: 200%;
+
+            .btn-light {
+                width: 33%;
+            }
+        }
+    }
+
+    &-hero > * {
+        z-index: 2;
+        position: relative;
+    }
+}
