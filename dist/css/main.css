@@ -262,7 +262,8 @@ body {
   font-size: .7rem;
   line-height: 1.4;
   padding: .3rem 1rem;
-  text-align: center; }
+  text-align: center;
+  z-index: 8; }
 
 .navbar-category {
   color: #333;
@@ -278,6 +279,7 @@ body {
 
 #home-hero {
   background: url("../img/home-hero.jpg") no-repeat center center/cover;
+  height: 100%;
   position: relative;
   color: #f4f4f4;
   min-height: 66vh;

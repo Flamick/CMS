@@ -48,6 +48,7 @@ body {
     line-height: 1.4;
     padding: .3rem 1rem;
     text-align: center;
+    z-index: 8;
 }
 
 // navbar category start
@@ -73,7 +74,7 @@ body {
 #home {
     &-hero {
         background: url("../img/home-hero.jpg") no-repeat center center/cover;
-        
+        height: 100%;
         position: relative;
         color: $light-color;
         min-height: 66vh;
