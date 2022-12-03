@@ -1,8 +1,7 @@
 .container {
   max-width: 1200px;
   width: 86%;
-  margin: 0 auto;
-  min-height: 100%; }
+  margin: 0 auto; }
 
 .flex-container {
   display: flex;
@@ -264,7 +263,8 @@ body {
   line-height: 1.4;
   padding: .3rem 1rem;
   text-align: center;
-  z-index: 8; }
+  z-index: 999;
+  position: relative; }
 
 .navbar-category {
   color: #333;
@@ -325,3 +325,6 @@ body {
     .survey-content p {
       font-size: .9rem;
       line-height: 1.2; }
+
+.blank {
+  height: 200vh; }
