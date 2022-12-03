@@ -96,7 +96,8 @@
   width: 100%; }
 
 #mobile-nav {
-  background: #373D40;
+  background: #f4f4f4;
+  color: #333;
   padding: .4rem 0;
   z-index: 4;
   position: sticky;
@@ -115,7 +116,6 @@
   transition: all 300ms;
   margin-right: 3.8rem; }
   .logo h2 {
-    color: #f4f4f4;
     font-size: 1.8rem;
     font-weight: 300; }
 
@@ -125,11 +125,9 @@
   padding: .6rem;
   justify-content: center;
   align-items: center; }
-  .icon a {
-    color: #f4f4f4; }
   .icon .material-symbols-outlined {
     transform: scale(1.4);
-    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48; }
+    font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48; }
 
 .menu-btn {
   position: relative;
@@ -147,7 +145,7 @@
 .menu-btn__burger {
   width: 30px;
   height: 3px;
-  background: #f4f4f4;
+  background: #333;
   border-radius: 5px;
   transition: all .5s ease-in-out; }
 
@@ -157,7 +155,7 @@
   position: absolute;
   width: 30px;
   height: 3px;
-  background: #f4f4f4;
+  background: #333;
   border-radius: 5px;
   transition: all .5s ease-in-out; }
 
@@ -187,7 +185,7 @@
   width: 100%;
   min-height: 100vh;
   z-index: 3;
-  background-color: #373D40;
+  background-color: #f4f4f4;
   transition: all .3s ease-in-out;
   -webkit-tap-highlight-color: transparent; }
   #mobile-menu .current-mobile {
@@ -215,7 +213,7 @@
     margin: 0 auto 1.4rem;
     text-align: center;
     padding: .8rem 1rem;
-    color: #f4f4f4;
+    color: #333;
     font-size: 1.3rem; }
   #mobile-menu.open {
     left: 0; }
@@ -256,8 +254,8 @@ body {
   overflow-x: hidden; }
 
 .navbar-category {
-  color: #333;
-  background: #6DA4BF; }
+  color: #f4f4f4;
+  background: #555; }
   .navbar-category ul {
     display: flex;
     justify-content: space-between;
@@ -265,14 +263,7 @@ body {
     .navbar-category ul li {
       padding: .7rem;
       font-weight: 500;
-      flex-basis: 1/3;
-      border: 1px solid #333; }
-      .navbar-category ul li:first-child {
-        border-left: 2px solid #333; }
-      .navbar-category ul li:last-child {
-        border-right: 2px solid #333; }
-      .navbar-category ul li:nth-child(2) {
-        background: #B0C1CA; }
+      flex-basis: 1/3; }
 
 #home-hero {
   background: url("../img/hero_home.jpg") no-repeat center center/cover;
@@ -292,6 +283,8 @@ body {
     height: 100%;
     width: 100%;
     z-index: 0; }
+  #home-hero .hero-content .flex-container {
+    gap: 1rem; }
   #home-hero .hero-buttons {
     flex-direction: row;
     gap: 3rem;
