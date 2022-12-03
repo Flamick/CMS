@@ -1,6 +1,7 @@
 @import "config";
 @import "utilities";
 @import "hamburger.scss";
+@import "card-slider";
 
 *,
 *::before,
@@ -32,6 +33,14 @@ a {
     }
 }
 
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 400;
+}
+
+html,
 body {
     font-family: $primary-font;
     color: $dark-color;
@@ -143,4 +152,3 @@ body {
     }
 }
 // survey end
-
