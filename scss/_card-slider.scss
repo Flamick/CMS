@@ -7,6 +7,7 @@ transform: translateX(0);
 will-change: transform;
 transition: transform 0.3s ease-out;
 cursor: grab;
+padding: 1rem 0;
 }
 
 .slide{
@@ -15,6 +16,12 @@ width: 100vw;
 display: flex;
 align-items: center;
 justify-content: center;
+margin: 0 -20px;
+}
+
+// target first .slide
+.slide:first-child {
+margin-left: 0;
 }
 
 @media(min-width: 1200px){

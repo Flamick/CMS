@@ -80,7 +80,7 @@ function animation() {
 }
 
 function setPositionByIndex() {
-  currentTranslate = currentIndex * -window.innerWidth
+  currentTranslate = currentIndex * (-window.innerWidth + 40)
   prevTranslate = currentTranslate
   setSliderPosition()
 }
