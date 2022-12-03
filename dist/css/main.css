@@ -13,6 +13,9 @@
 .fill-container {
   width: 100%; }
 
+.underlined {
+  text-decoration: underline; }
+
 .logo-title {
   font-weight: 500;
   font-size: 1.4rem; }
@@ -253,9 +256,17 @@ body {
   min-height: 100vh;
   overflow-x: hidden; }
 
-.navbar-category {
+.sale-cta-top {
+  background: #243740;
   color: #f4f4f4;
-  background: #555; }
+  font-size: .9rem;
+  line-height: 1.4;
+  padding: .3rem 1rem;
+  text-align: center; }
+
+.navbar-category {
+  color: #333;
+  background: #e7e7e7; }
   .navbar-category ul {
     display: flex;
     justify-content: space-between;

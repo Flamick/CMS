@@ -40,10 +40,20 @@ body {
     overflow-x: hidden;
 }
 
+// sale cta top start
+.sale-cta-top {
+    background: $dark-complimentary;
+    color: $light-color;
+    font-size: .9rem;
+    line-height: 1.4;
+    padding: .3rem 1rem;
+    text-align: center;
+}
+
 // navbar category start
 .navbar-category {
-    color: $light-color;
-    background: $medium-color;
+    color: $dark-color;
+    background: #e7e7e7;
 
     ul {
         display: flex;
