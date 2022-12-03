@@ -68,14 +68,14 @@
 %btn-shared {
     display: block;
     text-decoration: none;
-    padding: 1rem 1.5rem;
+    padding: .7rem 1rem;
+    font-size: .9rem;
     border: none;
     outline: none;
     cursor: pointer;
-    border-radius: 10px;
-    font-size: 1.2rem;
+    border-radius: 3px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 400;
     width: 100%;
 }
 
@@ -123,9 +123,9 @@
 }
 
 .bottom-line {
-    height: 2px;
-    width: 7rem;
-    background: $primary-color;
+    height: 1px;
+    width: 100%;
+    background: $medium-color;
     display: block;
     margin: 0 auto;
 }
