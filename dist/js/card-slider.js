@@ -2,7 +2,9 @@
 const slider = document.querySelector('.slider-container'),
   slides = Array.from(document.querySelectorAll('.slide')),
   slider2 = document.querySelector('.slider-container-2'),
-  slides2 = Array.from(document.querySelectorAll('.slide-2'))
+  slides2 = Array.from(document.querySelectorAll('.slide-2')),
+  slider3 = document.querySelector('.slider-container-3'),
+  slides3 = Array.from(document.querySelectorAll('.slide-3'))
 
 
 // set up our state
@@ -18,6 +20,12 @@ let isDragging2 = false,
   prevTranslate2 = 0,
   animationID2,
   currentIndex2 = 0
+let isDragging3 = false,
+  startPos3 = 0,
+  currentTranslate3 = 0,
+  prevTranslate3 = 0,
+  animationID3,
+  currentIndex3 = 0
 
 // add our event listeners
 slides.forEach((slide, index) => {
@@ -34,7 +42,6 @@ slides.forEach((slide, index) => {
   slide.addEventListener('mousemove', touchMove)
   slide.addEventListener('mouseleave', touchEnd)
 })
-
 // add our event listeners for 2nd slider
 slides2.forEach((slide2, index2) => {
   const slideCard2 = slide2.querySelector('.card-2')
@@ -49,6 +56,21 @@ slides2.forEach((slide2, index2) => {
   slide2.addEventListener('mouseup', touchEnd2)
   slide2.addEventListener('mousemove', touchMove2)
   slide2.addEventListener('mouseleave', touchEnd2)
+})
+// add our event listeners for 3nd slider
+slides3.forEach((slide3, index3) => {
+  const slideCard3 = slide3.querySelector('.card-3')
+  // disable default image drag
+  slideCard3.addEventListener('dragstart', (e) => e.preventDefault())
+  // touch events
+  slide3.addEventListener('touchstart', touchStart3(index3))
+  slide3.addEventListener('touchend', touchEnd3)
+  slide3.addEventListener('touchmove', touchMove3)
+  // mouse events
+  slide3.addEventListener('mousedown', touchStart3(index3))
+  slide3.addEventListener('mouseup', touchEnd3)
+  slide3.addEventListener('mousemove', touchMove3)
+  slide3.addEventListener('mouseleave', touchEnd3)
 })
 
 // make responsive to viewport changes
@@ -84,6 +106,15 @@ function touchStart2(index2) {
     slider2.classList.add('grabbing')
   }
 }
+function touchStart3(index3) {
+  return function (event) {
+    currentIndex3 = index3
+    startPos3 = getPositionX(event)
+    isDragging3 = true
+    animationID3 = requestAnimationFrame(animation3)
+    slider3.classList.add('grabbing')
+  }
+}
 
 function touchMove(event) {
   if (isDragging) {
@@ -95,6 +126,12 @@ function touchMove2(event) {
   if (isDragging2) {
     const currentPosition2 = getPositionX(event)
     currentTranslate2 = prevTranslate2 + currentPosition2 - startPos2
+  }
+}
+function touchMove3(event) {
+  if (isDragging3) {
+    const currentPosition3 = getPositionX(event)
+    currentTranslate3 = prevTranslate3 + currentPosition3 - startPos3
   }
 }
 
@@ -128,6 +165,21 @@ function touchEnd2() {
 
   slider2.classList.remove('grabbing')
 }
+function touchEnd3() {
+  cancelAnimationFrame(animationID3)
+  isDragging = false
+  const movedBy3 = currentTranslate3 - prevTranslate3
+
+  // if moved enough negative then snap to next slide if there is one
+  if (movedBy3 < -100 && currentIndex3 < slides3.length - 1) currentIndex3 += 1
+
+  // if moved enough positive then snap to previous slide if there is one
+  if (movedBy3 > 100 && currentIndex3 > 0) currentIndex3 -= 1
+
+  setPositionByIndex3()
+
+  slider3.classList.remove('grabbing')
+}
 
 function animation() {
   setSliderPosition()
@@ -136,6 +188,10 @@ function animation() {
 function animation2() {
   setSliderPosition2()
   if (isDragging2) requestAnimationFrame(animation2)
+}
+function animation3() {
+  setSliderPosition3()
+  if (isDragging3) requestAnimationFrame(animation3)
 }
 
 function setPositionByIndex() {
@@ -148,10 +204,18 @@ function setPositionByIndex2() {
   prevTranslate2 = currentTranslate2
   setSliderPosition2()
 }
+function setPositionByIndex3() {
+  currentTranslate3 = currentIndex3 * (-window.innerWidth + 40)
+  prevTranslate3 = currentTranslate3
+  setSliderPosition3()
+}
 
 function setSliderPosition() {
   slider.style.transform = `translateX(${currentTranslate}px)`
 }
 function setSliderPosition2() {
   slider2.style.transform = `translateX(${currentTranslate2}px)`
+}
+function setSliderPosition3() {
+  slider3.style.transform = `translateX(${currentTranslate3}px)`
 }
