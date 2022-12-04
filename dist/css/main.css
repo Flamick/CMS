@@ -227,6 +227,9 @@
     #mobile-menu.open .navlink-5 {
       transform: translateX(0); }
 
+.best-sellers {
+  padding: 1rem 0 2rem 0; }
+
 .text-slider {
   text-align: center; }
   .text-slider h2 {
@@ -410,3 +413,20 @@ body {
     .survey-content p {
       font-size: .9rem;
       line-height: 1.2; }
+
+.hot-item .hot-item-img {
+  background: url("../img/hot-item.jpg") no-repeat center center/cover;
+  min-height: 40vh; }
+
+.hot-item .hot-item-info {
+  padding: 1.5rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; }
+  .hot-item .hot-item-info h2 {
+    font-weight: 600; }
+  .hot-item .hot-item-info p {
+    font-weight: 500; }

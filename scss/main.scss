@@ -148,3 +148,29 @@ body {
     }
 }
 // survey end
+
+// hot item start
+.hot-item {
+    .hot-item-img {
+        background: url("../img/hot-item.jpg") no-repeat center center/cover;
+        min-height: 40vh;
+    }
+
+    .hot-item-info {
+        padding: 1.5rem 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        h2 {
+            font-weight: 600;
+        }
+
+        p {
+            font-weight: 500;
+        }
+    }
+}
