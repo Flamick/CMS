@@ -158,7 +158,7 @@ body {
     }
 
     .hot-item-info {
-        padding: 1.5rem 0 2.4rem 0;
+        padding: 1.5rem 0;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -175,3 +175,40 @@ body {
         }
     }
 }
+// hot item end
+
+// hot item2 start
+.hot-item2 {
+    .hot-item2-img {
+        background: url("../img/hot-item-2.jpg") no-repeat center center/cover;
+        min-height: 40vh;
+    }
+
+    .hot-item2-info {
+        padding: 1.5rem 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        h2 {
+            font-weight: 600;
+        }
+
+        p {
+            font-weight: 500;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+    }
+}
+// hot item end
