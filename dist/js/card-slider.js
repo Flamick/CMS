@@ -1,6 +1,9 @@
 // get our elements
 const slider = document.querySelector('.slider-container'),
-  slides = Array.from(document.querySelectorAll('.slide'))
+  slides = Array.from(document.querySelectorAll('.slide')),
+  slider2 = document.querySelector('.slider-container-2'),
+  slides2 = Array.from(document.querySelectorAll('.slide-2'))
+
 
 // set up our state
 let isDragging = false,
@@ -9,6 +12,12 @@ let isDragging = false,
   prevTranslate = 0,
   animationID,
   currentIndex = 0
+let isDragging2 = false,
+  startPos2 = 0,
+  currentTranslate2 = 0,
+  prevTranslate2 = 0,
+  animationID2,
+  currentIndex2 = 0
 
 // add our event listeners
 slides.forEach((slide, index) => {
@@ -24,6 +33,22 @@ slides.forEach((slide, index) => {
   slide.addEventListener('mouseup', touchEnd)
   slide.addEventListener('mousemove', touchMove)
   slide.addEventListener('mouseleave', touchEnd)
+})
+
+// add our event listeners for 2nd slider
+slides2.forEach((slide2, index2) => {
+  const slideCard2 = slide2.querySelector('.card-2')
+  // disable default image drag
+  slideCard2.addEventListener('dragstart', (e) => e.preventDefault())
+  // touch events
+  slide2.addEventListener('touchstart', touchStart2(index2))
+  slide2.addEventListener('touchend', touchEnd2)
+  slide2.addEventListener('touchmove', touchMove2)
+  // mouse events
+  slide2.addEventListener('mousedown', touchStart2(index2))
+  slide2.addEventListener('mouseup', touchEnd2)
+  slide2.addEventListener('mousemove', touchMove2)
+  slide2.addEventListener('mouseleave', touchEnd2)
 })
 
 // make responsive to viewport changes
@@ -50,11 +75,26 @@ function touchStart(index) {
     slider.classList.add('grabbing')
   }
 }
+function touchStart2(index2) {
+  return function (event) {
+    currentIndex2 = index2
+    startPos2 = getPositionX(event)
+    isDragging2 = true
+    animationID2 = requestAnimationFrame(animation2)
+    slider2.classList.add('grabbing')
+  }
+}
 
 function touchMove(event) {
   if (isDragging) {
     const currentPosition = getPositionX(event)
     currentTranslate = prevTranslate + currentPosition - startPos
+  }
+}
+function touchMove2(event) {
+  if (isDragging2) {
+    const currentPosition2 = getPositionX(event)
+    currentTranslate2 = prevTranslate2 + currentPosition2 - startPos2
   }
 }
 
@@ -73,10 +113,29 @@ function touchEnd() {
 
   slider.classList.remove('grabbing')
 }
+function touchEnd2() {
+  cancelAnimationFrame(animationID2)
+  isDragging = false
+  const movedBy2 = currentTranslate2 - prevTranslate2
+
+  // if moved enough negative then snap to next slide if there is one
+  if (movedBy2 < -100 && currentIndex2 < slides2.length - 1) currentIndex2 += 1
+
+  // if moved enough positive then snap to previous slide if there is one
+  if (movedBy2 > 100 && currentIndex2 > 0) currentIndex2 -= 1
+
+  setPositionByIndex2()
+
+  slider2.classList.remove('grabbing')
+}
 
 function animation() {
   setSliderPosition()
   if (isDragging) requestAnimationFrame(animation)
+}
+function animation2() {
+  setSliderPosition2()
+  if (isDragging2) requestAnimationFrame(animation2)
 }
 
 function setPositionByIndex() {
@@ -84,7 +143,15 @@ function setPositionByIndex() {
   prevTranslate = currentTranslate
   setSliderPosition()
 }
+function setPositionByIndex2() {
+  currentTranslate2 = currentIndex2 * (-window.innerWidth + 40)
+  prevTranslate2 = currentTranslate2
+  setSliderPosition2()
+}
 
 function setSliderPosition() {
   slider.style.transform = `translateX(${currentTranslate}px)`
+}
+function setSliderPosition2() {
+  slider2.style.transform = `translateX(${currentTranslate2}px)`
 }
