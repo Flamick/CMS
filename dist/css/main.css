@@ -329,7 +329,7 @@ box-shadow: 5px 5px 40px -1px var(--shadow);
   will-change: transform;
   transition: transform 0.3s ease-out;
   cursor: grab;
-  padding: 1rem 0; }
+  padding: 1.5rem 0; }
 
 .slide-2,
 .slide-3 {
