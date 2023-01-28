@@ -260,7 +260,7 @@
   scrollbar-width: none;
   transform: translateX(0);
   will-change: transform;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-in-out;
   cursor: grab;
   padding: 1rem 0; }
 
@@ -269,8 +269,7 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 -20px; }
+  justify-content: center; }
 
 .slide:first-child {
   margin-left: 0; }
@@ -327,7 +326,7 @@ box-shadow: 5px 5px 40px -1px var(--shadow);
   scrollbar-width: none;
   transform: translateX(0);
   will-change: transform;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-in-out;
   cursor: grab;
   padding: 1.5rem 0; }
 
@@ -337,8 +336,7 @@ box-shadow: 5px 5px 40px -1px var(--shadow);
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 -20px; }
+  justify-content: center; }
 
 .slide-2:first-child,
 .slide-3:first-child {

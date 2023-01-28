@@ -15,7 +15,7 @@ overflow: hidden;
 scrollbar-width: none;
 transform: translateX(0);
 will-change: transform;
-transition: transform 0.3s ease-out;
+transition: transform 0.3s ease-in-out;
 cursor: grab;
 padding: 1.5rem 0;
 }
@@ -27,7 +27,7 @@ width: 100vw;
 display: flex;
 align-items: center;
 justify-content: center;
-margin: 0 -20px;
+// margin: 0 -20px;
 }
 
 // target first .slide
