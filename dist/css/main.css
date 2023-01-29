@@ -269,7 +269,8 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  margin: 0 -20px; }
 
 .slide:first-child {
   margin-left: 0; }
@@ -336,7 +337,8 @@ box-shadow: 5px 5px 40px -1px var(--shadow);
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  margin: 0 -20px; }
 
 .slide-2:first-child,
 .slide-3:first-child {
